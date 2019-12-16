@@ -1,7 +1,38 @@
 # Artificial-Intelligence-GOMOKU
-IA solving Gomoku on Pisvork platform
 
-Usage:
-You need to convert the pbrain-gomoku-ai python file to an executable.
+AI playing gomoku on Piswork platform
 
-In pisvork settings, you can choose the executable for launching the IA
+### Prerequisites
+
+install Piswork here : https://sourceforge.net/projects/piskvork/
+
+You'll need python v3.7.
+
+I recommand usage of auto-py-to-exe for converting .py executable to .exe : https://pypi.org/project/auto-py-to-exe/
+
+### Installing
+
+First, run make
+
+```
+make
+```
+
+And convert the file pbrain-gomoku-ai executable to an exe.
+
+Then, open Piswork and setup your game using the AI exe.
+
+## Running the tests
+
+Tests are note available for now
+
+## Built With
+
+* [Python](https://www.python.org)
+* [auto-py-to-exe](https://pypi.org/project/auto-py-to-exe/)
+
+## Authors
+
+* **Arthur LANG** - *Initial work* - [LangArthur](https://github.com/LangArthur)
+
+See also the list of [contributors](https://github.com/LangArthur/Image-Compressor/graphs/contributors) who participated in this project
