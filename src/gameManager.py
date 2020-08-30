@@ -3,16 +3,20 @@
 
 import sys
 
-from src.Brain import *
+from src.ABrain import *
+
+# GameManager class
+#
+# It handle all communication with the interface Piswork
 
 class GameManager:
 
-    def __init__(self):
+    def __init__(self, brain):
         self.inGame = True
         self.limit = 20
         self.boardSize = 0
         self.board = []
-        self.brain = Brain()
+        self.brain = brain
         self.oppenent = -1
         self.player = 1
         self.cmd = {
@@ -26,7 +30,7 @@ class GameManager:
             "RESTART": self.restart,
         }
 
-    def communicate(self):
+    def launch(self):
         try:
             while self.inGame:
                 line = input()
@@ -58,7 +62,11 @@ class GameManager:
             self.myWrite("ERROR No size given")
 
     def turn(self, elems):
-        if (self.boardSize != 0):
+        if (self.boardSize == 0):
+            self.myWrite("ERROR board was not correctly initialisze")
+        elif (len(elems) < 2):
+            self.myWrite("ERROR no position is given")
+        else:
             val = [int(x) for x in elems[1].split(',')]
             x = val[0]
             y = val[1]
@@ -66,8 +74,6 @@ class GameManager:
             move = [int(x) for x in self.brain.action(self.board)]
             self.board[move[1] * self.boardSize + move[0]] = self.player
             self.myWrite("{},{}".format(move[0], move[1]))
-        else:
-            self.myWrite("ERROR board was not correctly initialisze")
 
     def boardFct(self, elems):
         line = input()
@@ -78,9 +84,6 @@ class GameManager:
         move = [int(x) for x in self.brain.action(self.board)]
         self.board[move[1] * self.boardSize + move[0]] = self.player
         self.myWrite("{},{}".format(move[0], move[1]))
-
-    def launch(self):
-        self.communicate()
 
     def info(self, elems):
         return 0

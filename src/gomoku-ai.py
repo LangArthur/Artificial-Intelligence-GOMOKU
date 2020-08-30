@@ -1,13 +1,7 @@
 #!/usr/bin/python3
 # -*-coding:Utf-8 -*
 
-import random
-
-from src.Pattern import *
-from src.Node import *
-
-class Brain:
-    
+class GomokuAi (Brain) :
     def __init__(self):
         self.name = "Plague"
         self.version = "1.3"
@@ -199,9 +193,3 @@ class Brain:
                 debug += '\n'
         print ("{}".format(debug), flush=True)
         print("MESSAGE Etat jeu", flush=True)
-
-def randomBrain():
-    res = [random.randint(0, self.boardSize - 1), random.randint(0, self.boardSize - 1)]
-    while (board[res[0] * self.boardSize + res[1]] != 0):
-        res = [random.randint(0, self.boardSize - 1), random.randint(0, self.boardSize - 1)]
-    return res
