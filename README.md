@@ -16,6 +16,10 @@ The makefile do not work for the moment so convert the file pbrain-gomoku-ai.py 
 
 Then, open Piswork and setup your game using the AI exe.
 
+### Executable
+
+Several executable are available in executable folder. They all implement a brain with the same name. For example RandomBrain.exe is the implementation of RandomBrain.py.
+
 ## Running the tests
 
 Tests are note available for now
