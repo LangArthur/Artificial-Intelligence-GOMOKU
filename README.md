@@ -12,13 +12,7 @@ I recommand usage of auto-py-to-exe for converting .py executable to .exe : http
 
 ### Installing
 
-First, run make
-
-```
-make
-```
-
-And convert the file pbrain-gomoku-ai executable to an exe.
+The makefile do not work for the moment so convert the file pbrain-gomoku-ai.py to an exe.
 
 Then, open Piswork and setup your game using the AI exe.
 
