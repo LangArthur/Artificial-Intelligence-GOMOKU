@@ -89,7 +89,9 @@ class GameManager:
         return 0
 
     def begin(self, elems):
-        self.myWrite("{},{}".format(int(self.boardSize / 2), int(self.boardSize / 2)))
+        move = [int(self.boardSize / 2), int(self.boardSize / 2)]
+        self.myWrite("{},{}".format(move[0], move[1]))
+        self.board[move[1] * self.boardSize + move[0]] = self.player
 
     def restart(self, elems):
         self.board = [[0 for x in range(self.boardSize)] for y in range(self.boardSize)]

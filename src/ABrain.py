@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 # -*-coding:Utf-8 -*
 
-import random
-
 from src.Pattern import *
 from src.Node import *
 

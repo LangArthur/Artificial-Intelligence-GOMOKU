@@ -15,9 +15,11 @@ class RandomBrain (ABrain) :
         self.boardSize = size;
 
     def action(self, board):
+        self.debug(board);
         res = [random.randint(0, self.boardSize - 1), random.randint(0, self.boardSize - 1)]
-        while (board[res[0] * self.boardSize + res[1]] != 0):
+        while (board[res[1] * self.boardSize + res[0]] != 0):
             res = [random.randint(0, self.boardSize - 1), random.randint(0, self.boardSize - 1)]
+        print("DEBUG " + str(board[res[0] * self.boardSize + res[1]]), flush=True)
         return res
 
     def debug(self, board):
